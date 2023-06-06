@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    body {
+        background-color: black;
+        color: white;
+        
+    }
+
+    #para {
+        font-weight: bold;
+        margin-top: 30px;
+        font-size: 20px;
+    }
+
+    #ala {
+        font-weight: bold;
+        color: #00ffff !important;
+    }
+
+    .img-fluid {
+        border: 2px solid white;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+    }
+
+    .img-fluid:hover {
+        box-shadow: 0 8px 16px 0 white;
+    }
+    #myimg{
+        object-fit: cover;
+        margin-top: 60px;
+        
+    }
+</style>
+{% load static %}
+<h2 class="text-center mt-4" id="ala">{{data.text}}</h2>
+<p class="text-center m-5">{{data.text1}}</p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 mt-5">
+            <img src="{{ data.image.url }}" class="img-fluid" width="500px" height="500px" alt="">
+        </div>
+        <div class="col-lg-6 mt-5">
+            <h4 class="text-center" id="ala">Movie Info:</h4><br>
+            <h5 class="text-center">Show Name :- {{data.card_title}}</h5><br>
+            <h5 class="text-center">Release Year :- {{data.Release_Year}}</h5><br>
+            <h5 class="text-center">Language :- Dual-Audio{Hindi-English}</h5><br>
+            <h5 class="text-center">Quality :- 480p||720p||1080p||2160p</h5><br>
+            <h5 class="text-center">Format :- MKV</h5>
+            <h5 class="text-center">Uploaded On :- {{data.uploaded_on}}</h5>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <h3 class="text-center mt-5" id="ala">MOVIE :- SYNOPSIS/PLOT :</h3>
+    <p id="para">{{data.download}}</p><hr>
+    <img src="{{ data.image1.url }}" width="1000px" height="400px" class="align-center mt-3" id="myimg" alt="">
+    <img src="{{ data.image2.url }}" width="1000px" height="400px" class="align-center mt-3" id="myimg" alt="">
+    <img src="{{ data.image3.url }}" width="1000px" height="400px" class="align-center mt-3" id="myimg" alt="">
+    <img src="{{ data.image4.url }}" width="1000px" height="400px" class="align-center mt-3" id="myimg" alt="">
+    <img src="{{ data.image5.url }}" width="1000px" height="400px" class="align-center mt-3" id="myimg" alt="">
+    <img src="{{ data.image6.url }}" width="1000px" height="400px" class="align-center mt-3" id="myimg" alt="">
+<hr>
+</div>
+<div class="container">
+    <h3 class="text-center mt-4">{{data.download1}}</h3>
+    <h2 class="text-center mt-4"><a href="{{data.download_url}}" class="btn btn-primary btn-lg">Download 480p</a></h2>
+    
+    <h3 class="text-center mt-4">{{data.download2}}</h3>
+    <h2 class="text-center mt-4"><a href="{{data.download_url1}}" class="btn btn-primary btn-lg">Download 720p</a></h2>
+
+    <h3 class="text-center mt-4">{{data.download3}}</h3>
+    <h2 class="text-center mt-4"><a href="{{data.download_url2}}" class="btn btn-primary btn-lg">Download 1080p</a></h2>
+</div>
+    
+{% endblock %}

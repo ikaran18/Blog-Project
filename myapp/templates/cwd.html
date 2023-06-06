@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    body{
+        background-color: black;
+        color: white;
+      }
+      .card:hover{
+          box-shadow: 5px 5px 30px 12px ;
+      }
+      img{
+         max-height:700px;
+      }
+      #text12{
+        color: black;
+        font-weight: bold;
+        font-size: 25px;
+      }
+      #des{
+          font-size: 15px;
+      }
+      #des:hover{
+        color: blue;
+      }
+      #ndf{
+         text-align: center;
+         margin: 250px;
+      }
+</style>
+{% load static %}
+<div class="container ">
+    {% if data %}
+        <h1 class="text-center mt-5 " >{{name}}</h1>
+        <div class="row">
+            {% for i in data %}
+            <div class="col-lg-4 my-2"><br>
+                <div class="card" style="width: 18rem;">
+                    <img src="{{i.image.url}}" class="card-img-top " height="200px" alt="{{i.title}}">
+                    <div class="card-body">
+                     <h5 class="card-title">{{i.card_title}}</h5>
+                    <p class="card-text" id='des'>{{i.description}}</p>
+                    <a href="#" class="btn btn-primary">Download</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <h1 id="ndf">NO DATA FOUND</h1>
+        {% endif %}
+    </div>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<style>
+
+    body{
+      background-color: black;
+      color: white;
+    }
+    .card:hover{
+        box-shadow: 5px 5px 30px 12px ;
+    }
+    img{
+       max-height:700px;
+    }
+    #text12{
+      color: black;
+      font-weight: bold;
+      font-size: 25px;
+    }
+    #des{
+        font-size: 15px;
+    }
+    #des:hover{
+      color: blue;
+    }
+</style>
+
+<div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'Exists.jpg' %}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src=".{% static 'Scooby.jpg' %}." class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'av.jpg' %}" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<h2 class="text-center mt-5">Download Your Latest Movies Here</h2>
+<div class="container ">
+    <div class="row">
+        {% for i in data %}
+        <div class="col-lg-4 my-2"><br>
+              <a href="{% url 'readmore' i.id %}">
+            <div class="card" style="width: 18rem;">
+                <img src="{{i.image.url}}" class="card-img-top " height="200px" alt="{{i.title}}">
+                <div class="card-body">
+                </a>
+                 <h5 class="card-title">{{i.card_title}}</h5>
+                <p class="card-text" id='des'>{{i.description}}</p>
+                <a href="{% url 'readmore' i.id %}" class="btn btn-primary">Download</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% if messages %}
+{% for i in messages %}
+<script>
+  alert("{{i}}")
+</script>
+{% endfor %}
+{% endif %}
+</div>
+{% endblock %}

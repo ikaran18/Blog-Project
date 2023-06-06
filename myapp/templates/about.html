@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+
+{% block content %}
+{% load static %}
+<style>
+.img{
+  width: 500px;
+  height: 500px;
+}
+</style>
+<h1 class="text-center my-5"> About Us</h1>
+<!-- START THE FEATURETTES -->
+
+<div class="row featurette px-3 my-5">
+  <div class="col-md-7">
+    <h2 class="featurette-heading fw-normal lh-1">Movies Hub</h2>
+    <p class="lead px-2 mt-3"> Movies Hub is a popular online platform for streaming and downloading high-quality Movies and animated series. With a vast collection of classic and modern Movies, Movies hub offers a one-stop-shop for all Movies enthusiasts.</p>
+    <p class="lead px-2 mt-3"> Movies Hub also provides users with the latest and most popular Movies, ensuring that viewers are up-to-date with the newest releases. The website Offers both dubbed and subbed versions of Movies , making it accessible to a broad audience worldwide.</p>
+    <p class="lead px-2 mt-3"> Overall, Movies Hub is an excellent choice for Movies lovers,offering a vast collection of Movies, user-friendly interface, and a vibrant community.Whether you are looking to revisit childhood classics or explore new and exciting animated series, Movies Hub has got you covered.</p>
+  </div>
+  <div class="col-md-5">
+    <img src="{% static 'Aladin.jpg' %}" class="img"  alt="">
+    <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500"
+      xmlns="" role="img" aria-label="Placeholder: 500x500"
+      preserveAspectRatio="xMidYMid slice" focusable="false">
+      <title>Placeholder</title>
+      <rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%"
+        fill="var(--bs-secondary-color)" dy=".3em">500x500</text>
+    </svg> -->
+  </div>
+</div>
+
+</div>
+{% endblock %}
